@@ -6,6 +6,7 @@ using McMaster.NETCore.Plugins;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using VoidILibrary;
+using Voidwyrm_Core.server;
 using VoidwyrmCoreAPI.core;
 using ILogger = VoidILibrary.interfaces.ILogger;
 
@@ -31,6 +32,9 @@ namespace VoidwyrmCoreAPI
             {
                 Console.WriteLine("0 Cogs Loaded!");
             }
+
+            HttpServer httpServer = new HttpServer();
+            httpServer.StartServer();
         }
         
         private static List<PluginLoader> GetPluginLoaders()
@@ -71,6 +75,7 @@ namespace VoidwyrmCoreAPI
                     var plugin = Activator.CreateInstance(pluginType) as ICog;
                     // Services
                     plugin?.Configure(services);
+                    Console.WriteLine(plugin?.CogName + " version v" + plugin?.CogVersion + " was loaded!");
                 }
             }
         }

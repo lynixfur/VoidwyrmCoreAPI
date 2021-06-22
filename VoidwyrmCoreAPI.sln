@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoidwyrmCoreAPI", "VoidwyrmCoreAPI\VoidwyrmCoreAPI.csproj", "{0CA9A320-86F3-4852-AF1D-48B4EB2F7A54}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoolCog", "CoolCog\CoolCog.csproj", "{43E8F4F4-C5DA-40CE-B737-A81D8EAA3530}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoidILibrary", "VoidILibrary\VoidILibrary.csproj", "{791AF7EE-1508-49E5-B66B-D63D9973644B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0CA9A320-86F3-4852-AF1D-48B4EB2F7A54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CA9A320-86F3-4852-AF1D-48B4EB2F7A54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CA9A320-86F3-4852-AF1D-48B4EB2F7A54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CA9A320-86F3-4852-AF1D-48B4EB2F7A54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43E8F4F4-C5DA-40CE-B737-A81D8EAA3530}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43E8F4F4-C5DA-40CE-B737-A81D8EAA3530}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43E8F4F4-C5DA-40CE-B737-A81D8EAA3530}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43E8F4F4-C5DA-40CE-B737-A81D8EAA3530}.Release|Any CPU.Build.0 = Release|Any CPU
+		{791AF7EE-1508-49E5-B66B-D63D9973644B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{791AF7EE-1508-49E5-B66B-D63D9973644B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{791AF7EE-1508-49E5-B66B-D63D9973644B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{791AF7EE-1508-49E5-B66B-D63D9973644B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

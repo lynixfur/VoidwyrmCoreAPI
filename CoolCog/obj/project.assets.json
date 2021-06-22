@@ -2,6 +2,28 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "McMaster.NETCore.Plugins/1.4.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.DotNet.PlatformAbstractions": "3.1.6",
+          "Microsoft.Extensions.DependencyModel": "5.0.0"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/McMaster.NETCore.Plugins.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/McMaster.NETCore.Plugins.dll": {}
+        }
+      },
+      "Microsoft.DotNet.PlatformAbstractions/3.1.6": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Microsoft.DotNet.PlatformAbstractions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.DotNet.PlatformAbstractions.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/6.0.0-preview.5.21301.5": {
         "type": "package",
         "dependencies": {
@@ -135,6 +157,19 @@
         },
         "runtime": {
           "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.Extensions.DependencyModel/5.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Text.Encodings.Web": "5.0.0",
+          "System.Text.Json": "5.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.DependencyModel.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.DependencyModel.dll": {}
         }
       },
       "Microsoft.Extensions.FileProviders.Abstractions/6.0.0-preview.5.21301.5": {
@@ -534,10 +569,60 @@
         "runtime": {
           "bin/placeholder/VoidILibrary.dll": {}
         }
+      },
+      "VoidwyrmCoreAPI/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "McMaster.NETCore.Plugins": "1.4.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0-preview.5.21301.5",
+          "VoidILibrary": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/VoidwyrmCoreAPI.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/VoidwyrmCoreAPI.dll": {}
+        }
       }
     }
   },
   "libraries": {
+    "McMaster.NETCore.Plugins/1.4.0": {
+      "sha512": "UKw5Z2/QHhkR7kiAJmqdCwVDMQV0lwsfj10+FG676r8DsJWIpxtachtEjE0qBs9WoK5GUQIqxgyFeYUSwuPszg==",
+      "type": "package",
+      "path": "mcmaster.netcore.plugins/1.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netcoreapp2.1/McMaster.NETCore.Plugins.dll",
+        "lib/netcoreapp2.1/McMaster.NETCore.Plugins.xml",
+        "lib/netcoreapp3.1/McMaster.NETCore.Plugins.dll",
+        "lib/netcoreapp3.1/McMaster.NETCore.Plugins.xml",
+        "mcmaster.netcore.plugins.1.4.0.nupkg.sha512",
+        "mcmaster.netcore.plugins.nuspec"
+      ]
+    },
+    "Microsoft.DotNet.PlatformAbstractions/3.1.6": {
+      "sha512": "jek4XYaQ/PGUwDKKhwR8K47Uh1189PFzMeLqO83mXrXQVIpARZCcfuDedH50YDTepBkfijCZN5U/vZi++erxtg==",
+      "type": "package",
+      "path": "microsoft.dotnet.platformabstractions/3.1.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net45/Microsoft.DotNet.PlatformAbstractions.dll",
+        "lib/net45/Microsoft.DotNet.PlatformAbstractions.xml",
+        "lib/netstandard1.3/Microsoft.DotNet.PlatformAbstractions.dll",
+        "lib/netstandard1.3/Microsoft.DotNet.PlatformAbstractions.xml",
+        "lib/netstandard2.0/Microsoft.DotNet.PlatformAbstractions.dll",
+        "lib/netstandard2.0/Microsoft.DotNet.PlatformAbstractions.xml",
+        "microsoft.dotnet.platformabstractions.3.1.6.nupkg.sha512",
+        "microsoft.dotnet.platformabstractions.nuspec"
+      ]
+    },
     "Microsoft.Extensions.Configuration/6.0.0-preview.5.21301.5": {
       "sha512": "r3JqZncSnPqVU8HyYtlMiJQEjxA2pabluis6yxCKcqk6CK7NNfRYJ9AKHNPR0f2Z8f6n77nMjF3ZngAaQFFWWg==",
       "type": "package",
@@ -724,6 +809,32 @@
         "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
         "microsoft.extensions.dependencyinjection.abstractions.6.0.0-preview.5.21301.5.nupkg.sha512",
         "microsoft.extensions.dependencyinjection.abstractions.nuspec"
+      ]
+    },
+    "Microsoft.Extensions.DependencyModel/5.0.0": {
+      "sha512": "umBECCoMC+sOUgm083yFr8SxTobUOcPFH4AXigdO2xJiszCHAnmeDl4qPphJt+oaJ/XIfV1wOjIts2nRnki61Q==",
+      "type": "package",
+      "path": "microsoft.extensions.dependencymodel/5.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net451/Microsoft.Extensions.DependencyModel.dll",
+        "lib/net451/Microsoft.Extensions.DependencyModel.xml",
+        "lib/net461/Microsoft.Extensions.DependencyModel.dll",
+        "lib/net461/Microsoft.Extensions.DependencyModel.xml",
+        "lib/netstandard1.3/Microsoft.Extensions.DependencyModel.dll",
+        "lib/netstandard1.3/Microsoft.Extensions.DependencyModel.xml",
+        "lib/netstandard1.6/Microsoft.Extensions.DependencyModel.dll",
+        "lib/netstandard1.6/Microsoft.Extensions.DependencyModel.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.DependencyModel.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.DependencyModel.xml",
+        "microsoft.extensions.dependencymodel.5.0.0.nupkg.sha512",
+        "microsoft.extensions.dependencymodel.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "Microsoft.Extensions.FileProviders.Abstractions/6.0.0-preview.5.21301.5": {
@@ -1314,50 +1425,58 @@
       "type": "project",
       "path": "../VoidILibrary/VoidILibrary.csproj",
       "msbuildProject": "../VoidILibrary/VoidILibrary.csproj"
+    },
+    "VoidwyrmCoreAPI/1.0.0": {
+      "type": "project",
+      "path": "../VoidwyrmCoreAPI/VoidwyrmCoreAPI.csproj",
+      "msbuildProject": "../VoidwyrmCoreAPI/VoidwyrmCoreAPI.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "VoidILibrary >= 1.0.0"
+      "VoidILibrary >= 1.0.0",
+      "VoidwyrmCoreAPI >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Lynix\\.nuget\\packages\\": {},
-    "E:\\VistualStudioShared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet": {}
+    "C:\\Users\\drago\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Lynix\\Documents\\GitHub\\BloodyARK\\VoidwyrmCoreAPI\\CoolCog\\CoolCog.csproj",
+      "projectUniqueName": "D:\\Documents\\VoidwyrmCoreAPI\\CoolCog\\CoolCog.csproj",
       "projectName": "CoolCog",
-      "projectPath": "C:\\Users\\Lynix\\Documents\\GitHub\\BloodyARK\\VoidwyrmCoreAPI\\CoolCog\\CoolCog.csproj",
-      "packagesPath": "C:\\Users\\Lynix\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Lynix\\Documents\\GitHub\\BloodyARK\\VoidwyrmCoreAPI\\CoolCog\\obj\\",
+      "projectPath": "D:\\Documents\\VoidwyrmCoreAPI\\CoolCog\\CoolCog.csproj",
+      "packagesPath": "C:\\Users\\drago\\.nuget\\packages\\",
+      "outputPath": "D:\\Documents\\VoidwyrmCoreAPI\\CoolCog\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "E:\\VistualStudioShared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Lynix\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\drago\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "D:\\Documents\\Nuget_Repo": {},
+        "https://api.nuget.org/v3/index.json": {},
+        "https://nuget.emzi0767.com/api/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Lynix\\Documents\\GitHub\\BloodyARK\\VoidwyrmCoreAPI\\VoidILibrary\\VoidILibrary.csproj": {
-              "projectPath": "C:\\Users\\Lynix\\Documents\\GitHub\\BloodyARK\\VoidwyrmCoreAPI\\VoidILibrary\\VoidILibrary.csproj"
+            "D:\\Documents\\VoidwyrmCoreAPI\\VoidILibrary\\VoidILibrary.csproj": {
+              "projectPath": "D:\\Documents\\VoidwyrmCoreAPI\\VoidILibrary\\VoidILibrary.csproj"
+            },
+            "D:\\Documents\\VoidwyrmCoreAPI\\VoidwyrmCoreAPI\\VoidwyrmCoreAPI.csproj": {
+              "projectPath": "D:\\Documents\\VoidwyrmCoreAPI\\VoidwyrmCoreAPI\\VoidwyrmCoreAPI.csproj"
             }
           }
         }

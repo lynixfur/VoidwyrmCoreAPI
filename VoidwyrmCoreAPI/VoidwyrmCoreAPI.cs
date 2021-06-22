@@ -12,14 +12,22 @@ using ILogger = VoidILibrary.interfaces.ILogger;
 
 namespace VoidwyrmCoreAPI
 {
+    using global::VoidwyrmCoreAPI.events;
+
     class VoidwyrmCoreAPI
     {
         static void Main(string[] args)
         {
             var services = new ServiceCollection();
             
-            
             var loaders = GetPluginLoaders();
+            
+            EventManager x = new EventManager();
+            x.PlayerJoined.Invoke(this, new Player_Joined
+                                        {
+                                            name = PlayerJoinReply.DataProps.Name,
+                                            steamid = PlayerJoinReply.DataProps.SteamId
+                                        })
 
             ConfigureServices(services, loaders);
             var cog = services.BuildServiceProvider();

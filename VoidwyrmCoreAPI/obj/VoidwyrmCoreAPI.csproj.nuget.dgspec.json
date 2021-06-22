@@ -1,34 +1,34 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Lynix\\Documents\\GitHub\\BloodyARK\\VoidwyrmCoreAPI\\VoidwyrmCoreAPI\\VoidwyrmCoreAPI.csproj": {}
+    "D:\\Documents\\VoidwyrmCoreAPI\\VoidwyrmCoreAPI\\VoidwyrmCoreAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Lynix\\Documents\\GitHub\\BloodyARK\\VoidwyrmCoreAPI\\VoidILibrary\\VoidILibrary.csproj": {
+    "D:\\Documents\\VoidwyrmCoreAPI\\VoidILibrary\\VoidILibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lynix\\Documents\\GitHub\\BloodyARK\\VoidwyrmCoreAPI\\VoidILibrary\\VoidILibrary.csproj",
+        "projectUniqueName": "D:\\Documents\\VoidwyrmCoreAPI\\VoidILibrary\\VoidILibrary.csproj",
         "projectName": "VoidILibrary",
-        "projectPath": "C:\\Users\\Lynix\\Documents\\GitHub\\BloodyARK\\VoidwyrmCoreAPI\\VoidILibrary\\VoidILibrary.csproj",
-        "packagesPath": "C:\\Users\\Lynix\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lynix\\Documents\\GitHub\\BloodyARK\\VoidwyrmCoreAPI\\VoidILibrary\\obj\\",
+        "projectPath": "D:\\Documents\\VoidwyrmCoreAPI\\VoidILibrary\\VoidILibrary.csproj",
+        "packagesPath": "C:\\Users\\drago\\.nuget\\packages\\",
+        "outputPath": "D:\\Documents\\VoidwyrmCoreAPI\\VoidILibrary\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "E:\\VistualStudioShared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Lynix\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\drago\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "D:\\Documents\\Nuget_Repo": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.emzi0767.com/api/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
@@ -70,38 +70,38 @@
         }
       }
     },
-    "C:\\Users\\Lynix\\Documents\\GitHub\\BloodyARK\\VoidwyrmCoreAPI\\VoidwyrmCoreAPI\\VoidwyrmCoreAPI.csproj": {
+    "D:\\Documents\\VoidwyrmCoreAPI\\VoidwyrmCoreAPI\\VoidwyrmCoreAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lynix\\Documents\\GitHub\\BloodyARK\\VoidwyrmCoreAPI\\VoidwyrmCoreAPI\\VoidwyrmCoreAPI.csproj",
+        "projectUniqueName": "D:\\Documents\\VoidwyrmCoreAPI\\VoidwyrmCoreAPI\\VoidwyrmCoreAPI.csproj",
         "projectName": "VoidwyrmCoreAPI",
-        "projectPath": "C:\\Users\\Lynix\\Documents\\GitHub\\BloodyARK\\VoidwyrmCoreAPI\\VoidwyrmCoreAPI\\VoidwyrmCoreAPI.csproj",
-        "packagesPath": "C:\\Users\\Lynix\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lynix\\Documents\\GitHub\\BloodyARK\\VoidwyrmCoreAPI\\VoidwyrmCoreAPI\\obj\\",
+        "projectPath": "D:\\Documents\\VoidwyrmCoreAPI\\VoidwyrmCoreAPI\\VoidwyrmCoreAPI.csproj",
+        "packagesPath": "C:\\Users\\drago\\.nuget\\packages\\",
+        "outputPath": "D:\\Documents\\VoidwyrmCoreAPI\\VoidwyrmCoreAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "E:\\VistualStudioShared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Lynix\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\drago\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "D:\\Documents\\Nuget_Repo": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.emzi0767.com/api/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\Lynix\\Documents\\GitHub\\BloodyARK\\VoidwyrmCoreAPI\\VoidILibrary\\VoidILibrary.csproj": {
-                "projectPath": "C:\\Users\\Lynix\\Documents\\GitHub\\BloodyARK\\VoidwyrmCoreAPI\\VoidILibrary\\VoidILibrary.csproj"
+              "D:\\Documents\\VoidwyrmCoreAPI\\VoidILibrary\\VoidILibrary.csproj": {
+                "projectPath": "D:\\Documents\\VoidwyrmCoreAPI\\VoidILibrary\\VoidILibrary.csproj"
               }
             }
           }

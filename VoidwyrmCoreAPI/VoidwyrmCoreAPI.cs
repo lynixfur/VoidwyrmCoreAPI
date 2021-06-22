@@ -16,6 +16,8 @@ namespace VoidwyrmCoreAPI
 
     class VoidwyrmCoreAPI
     {
+        public static EventHandler Player_Join;
+
         static void Main(string[] args)
         {
             var services = new ServiceCollection();
@@ -27,7 +29,7 @@ namespace VoidwyrmCoreAPI
                                         {
                                             name = PlayerJoinReply.DataProps.Name,
                                             steamid = PlayerJoinReply.DataProps.SteamId
-                                        })
+                                        });
 
             ConfigureServices(services, loaders);
             var cog = services.BuildServiceProvider();

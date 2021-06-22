@@ -12,5 +12,5 @@ namespace VoidILibrary
         public float CogVersion {get; set;}
         
         void Configure(IServiceCollection services);
-    }
+        void InitializeEvents(EventManager eventManager);
 }

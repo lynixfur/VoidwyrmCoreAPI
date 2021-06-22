@@ -1329,11 +1329,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Lynix\\RiderProjects\\VoidwyrmCoreAPI\\CoolCog\\CoolCog.csproj",
+      "projectUniqueName": "C:\\Users\\Lynix\\Documents\\GitHub\\BloodyARK\\VoidwyrmCoreAPI\\CoolCog\\CoolCog.csproj",
       "projectName": "CoolCog",
-      "projectPath": "C:\\Users\\Lynix\\RiderProjects\\VoidwyrmCoreAPI\\CoolCog\\CoolCog.csproj",
+      "projectPath": "C:\\Users\\Lynix\\Documents\\GitHub\\BloodyARK\\VoidwyrmCoreAPI\\CoolCog\\CoolCog.csproj",
       "packagesPath": "C:\\Users\\Lynix\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Lynix\\RiderProjects\\VoidwyrmCoreAPI\\CoolCog\\obj\\",
+      "outputPath": "C:\\Users\\Lynix\\Documents\\GitHub\\BloodyARK\\VoidwyrmCoreAPI\\CoolCog\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "E:\\VistualStudioShared\\NuGetPackages",
@@ -1356,8 +1356,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Lynix\\RiderProjects\\VoidwyrmCoreAPI\\VoidILibrary\\VoidILibrary.csproj": {
-              "projectPath": "C:\\Users\\Lynix\\RiderProjects\\VoidwyrmCoreAPI\\VoidILibrary\\VoidILibrary.csproj"
+            "C:\\Users\\Lynix\\Documents\\GitHub\\BloodyARK\\VoidwyrmCoreAPI\\VoidILibrary\\VoidILibrary.csproj": {
+              "projectPath": "C:\\Users\\Lynix\\Documents\\GitHub\\BloodyARK\\VoidwyrmCoreAPI\\VoidILibrary\\VoidILibrary.csproj"
             }
           }
         }

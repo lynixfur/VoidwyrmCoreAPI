@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HwqpVw3s6MlDMMFr3qjV58IZTbxbp7cprk0Nc7bRul6ZQL0xBZ776Mn7Nfwa1nlorU5RfbVv+n2c+B+C4XuWSA==",
+  "dgSpecHash": "71RV+NBbKlnoD731J1nZ/xQw80X0XRnm6vr/9hJmjcPeFsbjOfKaZwH4r2fMlM5rkxmxfbmzz0/BmDem3PYeIQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Lynix\\RiderProjects\\VoidwyrmCoreAPI\\CoolCog\\CoolCog.csproj",
+  "projectFilePath": "C:\\Users\\Lynix\\Documents\\GitHub\\BloodyARK\\VoidwyrmCoreAPI\\CoolCog\\CoolCog.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lynix\\.nuget\\packages\\microsoft.extensions.configuration\\6.0.0-preview.5.21301.5\\microsoft.extensions.configuration.6.0.0-preview.5.21301.5.nupkg.sha512",
     "C:\\Users\\Lynix\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0-preview.5.21301.5\\microsoft.extensions.configuration.abstractions.6.0.0-preview.5.21301.5.nupkg.sha512",

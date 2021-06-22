@@ -1427,11 +1427,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Lynix\\RiderProjects\\VoidwyrmCoreAPI\\VoidwyrmCoreAPI\\VoidwyrmCoreAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Lynix\\Documents\\GitHub\\BloodyARK\\VoidwyrmCoreAPI\\VoidwyrmCoreAPI\\VoidwyrmCoreAPI.csproj",
       "projectName": "VoidwyrmCoreAPI",
-      "projectPath": "C:\\Users\\Lynix\\RiderProjects\\VoidwyrmCoreAPI\\VoidwyrmCoreAPI\\VoidwyrmCoreAPI.csproj",
+      "projectPath": "C:\\Users\\Lynix\\Documents\\GitHub\\BloodyARK\\VoidwyrmCoreAPI\\VoidwyrmCoreAPI\\VoidwyrmCoreAPI.csproj",
       "packagesPath": "C:\\Users\\Lynix\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Lynix\\RiderProjects\\VoidwyrmCoreAPI\\VoidwyrmCoreAPI\\obj\\",
+      "outputPath": "C:\\Users\\Lynix\\Documents\\GitHub\\BloodyARK\\VoidwyrmCoreAPI\\VoidwyrmCoreAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "E:\\VistualStudioShared\\NuGetPackages",
@@ -1454,8 +1454,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Lynix\\RiderProjects\\VoidwyrmCoreAPI\\VoidILibrary\\VoidILibrary.csproj": {
-              "projectPath": "C:\\Users\\Lynix\\RiderProjects\\VoidwyrmCoreAPI\\VoidILibrary\\VoidILibrary.csproj"
+            "C:\\Users\\Lynix\\Documents\\GitHub\\BloodyARK\\VoidwyrmCoreAPI\\VoidILibrary\\VoidILibrary.csproj": {
+              "projectPath": "C:\\Users\\Lynix\\Documents\\GitHub\\BloodyARK\\VoidwyrmCoreAPI\\VoidILibrary\\VoidILibrary.csproj"
             }
           }
         }

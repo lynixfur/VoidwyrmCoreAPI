@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "N/js8Yi7SpzWLSwQQ0wbi7E8DdrxdtdrLOgevVGWqj2IsN274mRsyZy4URbLdrxVTi6Ba0rYbi9fqrH9ZX2MmA==",
+  "dgSpecHash": "HM00bQxZqMTDu05wEPgvNFes8hbIfzYoBU0ilGuN5cAOpOTrXN2m1x4I2jm1i+4AQqgWY7xcHW5F6XR/ymDd2w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Lynix\\RiderProjects\\VoidwyrmCoreAPI\\VoidwyrmCoreAPI\\VoidwyrmCoreAPI.csproj",
+  "projectFilePath": "C:\\Users\\Lynix\\Documents\\GitHub\\BloodyARK\\VoidwyrmCoreAPI\\VoidwyrmCoreAPI\\VoidwyrmCoreAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lynix\\.nuget\\packages\\mcmaster.netcore.plugins\\1.4.0\\mcmaster.netcore.plugins.1.4.0.nupkg.sha512",
     "C:\\Users\\Lynix\\.nuget\\packages\\microsoft.dotnet.platformabstractions\\3.1.6\\microsoft.dotnet.platformabstractions.3.1.6.nupkg.sha512",

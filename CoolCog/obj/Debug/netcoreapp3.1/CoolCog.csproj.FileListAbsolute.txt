@@ -10,3 +10,15 @@ C:\Users\Lynix\RiderProjects\VoidwyrmCoreAPI\CoolCog\obj\Debug\netcoreapp3.1\Coo
 C:\Users\Lynix\RiderProjects\VoidwyrmCoreAPI\CoolCog\obj\Debug\netcoreapp3.1\CoolCog.csproj.CopyComplete
 C:\Users\Lynix\RiderProjects\VoidwyrmCoreAPI\CoolCog\obj\Debug\netcoreapp3.1\CoolCog.dll
 C:\Users\Lynix\RiderProjects\VoidwyrmCoreAPI\CoolCog\obj\Debug\netcoreapp3.1\CoolCog.pdb
+C:\Users\Lynix\Documents\GitHub\BloodyARK\VoidwyrmCoreAPI\CoolCog\bin\Debug\netcoreapp3.1\CoolCog.deps.json
+C:\Users\Lynix\Documents\GitHub\BloodyARK\VoidwyrmCoreAPI\CoolCog\bin\Debug\netcoreapp3.1\CoolCog.dll
+C:\Users\Lynix\Documents\GitHub\BloodyARK\VoidwyrmCoreAPI\CoolCog\bin\Debug\netcoreapp3.1\CoolCog.pdb
+C:\Users\Lynix\Documents\GitHub\BloodyARK\VoidwyrmCoreAPI\CoolCog\bin\Debug\netcoreapp3.1\VoidILibrary.dll
+C:\Users\Lynix\Documents\GitHub\BloodyARK\VoidwyrmCoreAPI\CoolCog\bin\Debug\netcoreapp3.1\VoidILibrary.pdb
+C:\Users\Lynix\Documents\GitHub\BloodyARK\VoidwyrmCoreAPI\CoolCog\obj\Debug\netcoreapp3.1\CoolCog.csproj.AssemblyReference.cache
+C:\Users\Lynix\Documents\GitHub\BloodyARK\VoidwyrmCoreAPI\CoolCog\obj\Debug\netcoreapp3.1\CoolCog.AssemblyInfoInputs.cache
+C:\Users\Lynix\Documents\GitHub\BloodyARK\VoidwyrmCoreAPI\CoolCog\obj\Debug\netcoreapp3.1\CoolCog.AssemblyInfo.cs
+C:\Users\Lynix\Documents\GitHub\BloodyARK\VoidwyrmCoreAPI\CoolCog\obj\Debug\netcoreapp3.1\CoolCog.csproj.CoreCompileInputs.cache
+C:\Users\Lynix\Documents\GitHub\BloodyARK\VoidwyrmCoreAPI\CoolCog\obj\Debug\netcoreapp3.1\CoolCog.csproj.CopyComplete
+C:\Users\Lynix\Documents\GitHub\BloodyARK\VoidwyrmCoreAPI\CoolCog\obj\Debug\netcoreapp3.1\CoolCog.dll
+C:\Users\Lynix\Documents\GitHub\BloodyARK\VoidwyrmCoreAPI\CoolCog\obj\Debug\netcoreapp3.1\CoolCog.pdb

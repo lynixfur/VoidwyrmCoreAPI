@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Lynix\\RiderProjects\\VoidwyrmCoreAPI\\VoidILibrary\\VoidILibrary.csproj": {}
+    "C:\\Users\\Lynix\\Documents\\GitHub\\BloodyARK\\VoidwyrmCoreAPI\\VoidILibrary\\VoidILibrary.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Lynix\\RiderProjects\\VoidwyrmCoreAPI\\VoidILibrary\\VoidILibrary.csproj": {
+    "C:\\Users\\Lynix\\Documents\\GitHub\\BloodyARK\\VoidwyrmCoreAPI\\VoidILibrary\\VoidILibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lynix\\RiderProjects\\VoidwyrmCoreAPI\\VoidILibrary\\VoidILibrary.csproj",
+        "projectUniqueName": "C:\\Users\\Lynix\\Documents\\GitHub\\BloodyARK\\VoidwyrmCoreAPI\\VoidILibrary\\VoidILibrary.csproj",
         "projectName": "VoidILibrary",
-        "projectPath": "C:\\Users\\Lynix\\RiderProjects\\VoidwyrmCoreAPI\\VoidILibrary\\VoidILibrary.csproj",
+        "projectPath": "C:\\Users\\Lynix\\Documents\\GitHub\\BloodyARK\\VoidwyrmCoreAPI\\VoidILibrary\\VoidILibrary.csproj",
         "packagesPath": "C:\\Users\\Lynix\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lynix\\RiderProjects\\VoidwyrmCoreAPI\\VoidILibrary\\obj\\",
+        "outputPath": "C:\\Users\\Lynix\\Documents\\GitHub\\BloodyARK\\VoidwyrmCoreAPI\\VoidILibrary\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "E:\\VistualStudioShared\\NuGetPackages",

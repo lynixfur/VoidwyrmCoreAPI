@@ -21,11 +21,16 @@ namespace VoidwyrmCoreAPI
             var loaders = GetPluginLoaders();
 
             ConfigureServices(services, loaders);
-
-            using var serviceProvider = services.BuildServiceProvider();
-
-            var logger = serviceProvider.GetRequiredService<ILogger>();
-            logger.Log();
+            var cog = services.BuildServiceProvider();
+            if (loaders.Count != 0)
+            {
+                var cogLogger = cog.GetRequiredService<ILogger>();
+                cogLogger.Log();
+            }
+            else
+            {
+                Console.WriteLine("0 Cogs Loaded!");
+            }
         }
         
         private static List<PluginLoader> GetPluginLoaders()
@@ -33,7 +38,7 @@ namespace VoidwyrmCoreAPI
             var loaders = new List<PluginLoader>();
 
             // create plugin loaders
-            var pluginsDir = Path.Combine(AppContext.BaseDirectory, "plugins/cogs");
+            var pluginsDir = Path.Combine(AppContext.BaseDirectory, "cogs");
             foreach (var dir in Directory.GetDirectories(pluginsDir))
             {
                 var dirName = Path.GetFileName(dir);
@@ -65,7 +70,6 @@ namespace VoidwyrmCoreAPI
                     // This assumes the implementation of IPluginFactory has a parameterless constructor
                     var plugin = Activator.CreateInstance(pluginType) as ICog;
                     // Services
-                    services.AddSingleton<ILogger>();
                     plugin?.Configure(services);
                 }
             }

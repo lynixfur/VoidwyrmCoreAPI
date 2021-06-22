@@ -7,3 +7,12 @@ C:\Users\Lynix\RiderProjects\VoidwyrmCoreAPI\VoidILibrary\obj\Debug\netcoreapp3.
 C:\Users\Lynix\RiderProjects\VoidwyrmCoreAPI\VoidILibrary\obj\Debug\netcoreapp3.1\VoidILibrary.csproj.CoreCompileInputs.cache
 C:\Users\Lynix\RiderProjects\VoidwyrmCoreAPI\VoidILibrary\obj\Debug\netcoreapp3.1\VoidILibrary.dll
 C:\Users\Lynix\RiderProjects\VoidwyrmCoreAPI\VoidILibrary\obj\Debug\netcoreapp3.1\VoidILibrary.pdb
+C:\Users\Lynix\Documents\GitHub\BloodyARK\VoidwyrmCoreAPI\VoidILibrary\bin\Debug\netcoreapp3.1\VoidILibrary.deps.json
+C:\Users\Lynix\Documents\GitHub\BloodyARK\VoidwyrmCoreAPI\VoidILibrary\bin\Debug\netcoreapp3.1\VoidILibrary.dll
+C:\Users\Lynix\Documents\GitHub\BloodyARK\VoidwyrmCoreAPI\VoidILibrary\bin\Debug\netcoreapp3.1\VoidILibrary.pdb
+C:\Users\Lynix\Documents\GitHub\BloodyARK\VoidwyrmCoreAPI\VoidILibrary\obj\Debug\netcoreapp3.1\VoidILibrary.csproj.AssemblyReference.cache
+C:\Users\Lynix\Documents\GitHub\BloodyARK\VoidwyrmCoreAPI\VoidILibrary\obj\Debug\netcoreapp3.1\VoidILibrary.AssemblyInfoInputs.cache
+C:\Users\Lynix\Documents\GitHub\BloodyARK\VoidwyrmCoreAPI\VoidILibrary\obj\Debug\netcoreapp3.1\VoidILibrary.AssemblyInfo.cs
+C:\Users\Lynix\Documents\GitHub\BloodyARK\VoidwyrmCoreAPI\VoidILibrary\obj\Debug\netcoreapp3.1\VoidILibrary.csproj.CoreCompileInputs.cache
+C:\Users\Lynix\Documents\GitHub\BloodyARK\VoidwyrmCoreAPI\VoidILibrary\obj\Debug\netcoreapp3.1\VoidILibrary.dll
+C:\Users\Lynix\Documents\GitHub\BloodyARK\VoidwyrmCoreAPI\VoidILibrary\obj\Debug\netcoreapp3.1\VoidILibrary.pdb

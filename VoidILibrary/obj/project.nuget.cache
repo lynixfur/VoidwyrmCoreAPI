@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ExEo6lvgS6FHZ68T7Inx+OM3oAQn+13G0vDe5eIQQtyh44nSqgFOwmARYzbl+LNwLIPkWTR6iStFa3nOrD9ufg==",
+  "dgSpecHash": "1u7ZUIFQ5LarvdjbXhMTNBl4Ka31r8EYSGXpGGxH0zVRjMNtlCQmvf3iaKrY7V0uLvgvS/7DVJANiLyIFr82AA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Lynix\\RiderProjects\\VoidwyrmCoreAPI\\VoidILibrary\\VoidILibrary.csproj",
+  "projectFilePath": "C:\\Users\\Lynix\\Documents\\GitHub\\BloodyARK\\VoidwyrmCoreAPI\\VoidILibrary\\VoidILibrary.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lynix\\.nuget\\packages\\microsoft.extensions.configuration\\6.0.0-preview.5.21301.5\\microsoft.extensions.configuration.6.0.0-preview.5.21301.5.nupkg.sha512",
     "C:\\Users\\Lynix\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0-preview.5.21301.5\\microsoft.extensions.configuration.abstractions.6.0.0-preview.5.21301.5.nupkg.sha512",

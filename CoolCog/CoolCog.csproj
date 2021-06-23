@@ -2,13 +2,12 @@
 
     <PropertyGroup>
         <TargetFramework>netcoreapp3.1</TargetFramework>
-        <OutputPath>..\bin\cogs\CoolCog</OutputPath>
+        <OutputPath>..\bin\cogs</OutputPath>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     </PropertyGroup>
 
     <ItemGroup>
-      <Reference Include="VoidwyrmCoreAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-        <HintPath>..\bin\netcoreapp3.1\VoidwyrmCoreAPI.dll</HintPath>
-      </Reference>
+      <ProjectReference Include="..\VoidwyrmCoreAPI\VoidwyrmCoreAPI.csproj" />
     </ItemGroup>
 
 </Project>

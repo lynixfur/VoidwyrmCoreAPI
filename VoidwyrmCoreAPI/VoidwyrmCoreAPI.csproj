@@ -4,21 +4,13 @@
         <OutputType>Exe</OutputType>
         <TargetFramework>netcoreapp3.1</TargetFramework>
         <OutputPath>..\bin</OutputPath>
-        <ApplicationIcon>VoidwyrmApp.ico</ApplicationIcon>
+        <ApplicationIcon>assets\VoidwyrmApp.ico</ApplicationIcon>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     </PropertyGroup>
 
     <ItemGroup>
       <PackageReference Include="McMaster.NETCore.Plugins" Version="1.4.0" />
       <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0-preview.5.21301.5" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\VoidILibrary\VoidILibrary.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="models\dataprops" />
-      <Folder Include="models\events" />
     </ItemGroup>
 
 </Project>

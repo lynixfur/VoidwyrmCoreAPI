@@ -5,11 +5,15 @@ using VoidILibrary.interfaces;
 
 namespace CoolCog
 {
+    using VoidwyrmCoreAPI.events;
+
     public class CogConfiguration : ICog
     {
         public string CogName { get; set; }
         public string CogDescription { get; set; }
         public float CogVersion { get; set; }
+
+        private IServiceProvider serviceEvents;
 
         public CogConfiguration()
         {
@@ -21,6 +25,15 @@ namespace CoolCog
         public void Configure(IServiceCollection services)
         {
             services.AddSingleton<ILogger, Main>();
+        }
+
+        public void InitializeEvents(EventManager eventManager)
+        {
+            var eventServices = new ServiceCollection();
+            eventServices.AddSingleton(eventManager);
+            serviceEvents = eventServices.BuildServiceProvider();
+            
+            
         }
     }
 }

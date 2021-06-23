@@ -6,7 +6,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\VoidILibrary\VoidILibrary.csproj" />
       <ProjectReference Include="..\VoidwyrmCoreAPI\VoidwyrmCoreAPI.csproj" />
     </ItemGroup>
 

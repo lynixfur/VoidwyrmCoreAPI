@@ -8,6 +8,7 @@ using Microsoft.Extensions.Logging;
 using VoidILibrary;
 using Voidwyrm_Core.server;
 using VoidwyrmCoreAPI.core;
+using VoidwyrmCoreAPI.core.cogs;
 using VoidwyrmCoreAPI.events;
 using ILogger = VoidILibrary.interfaces.ILogger;
 
@@ -16,71 +17,21 @@ namespace VoidwyrmCoreAPI
 
     class VoidwyrmCoreAPI
     {
-        public static EventHandler Player_Join;
-
         static void Main(string[] args)
         {
             var services = new ServiceCollection();
-            
-            var loaders = GetPluginLoaders();
 
-            ConfigureServices(services, loaders);
-            var cog = services.BuildServiceProvider();
-            if (loaders.Count != 0)
-            {
-                var cogLogger = cog.GetRequiredService<ILogger>();
-                cogLogger.Log();
-            }
-            else
-            {
-                Console.WriteLine("0 Cogs Loaded!");
-            }
 
+            // Load Cogs into Memory
+            try { CogLoader loader = new CogLoader(); loader.LoadCogs(); }
+            catch { Console.WriteLine("Error : There was an error loading the cogs!"); }
+
+            // Test Cog Example
+            ICog plugin = (ICog)CogLoader.Cogs.FirstOrDefault(p => p.Name == "CoolCog");
+
+            // Start Rest API
             HttpServer httpServer = new HttpServer();
             httpServer.StartServer();
-        }
-        
-        private static List<PluginLoader> GetPluginLoaders()
-        {
-            var loaders = new List<PluginLoader>();
-
-            // create plugin loaders
-            var pluginsDir = Path.Combine(AppContext.BaseDirectory, "cogs");
-            foreach (var dir in Directory.GetDirectories(pluginsDir))
-            {
-                var dirName = Path.GetFileName(dir);
-                var pluginDll = Path.Combine(dir, dirName + ".dll");
-                if (File.Exists(pluginDll))
-                {
-                    var loader = PluginLoader.CreateFromAssemblyFile(
-                        pluginDll,
-                        sharedTypes: new[] { typeof(ICog), typeof(IServiceCollection) });
-                    loaders.Add(loader);
-                }
-            }
-
-            return loaders;
-        }
-
-        private static void ConfigureServices(ServiceCollection services, List<PluginLoader> loaders)
-        {
-            // Create an instance of plugin types
-            foreach (var loader in loaders)
-            {
-                
-                foreach (var pluginType in loader
-                    .LoadDefaultAssembly()
-                    .GetTypes()
-                    .Where(t => typeof(ICog).IsAssignableFrom(t) && !t.IsAbstract))
-                {
-                    
-                    // This assumes the implementation of IPluginFactory has a parameterless constructor
-                    var plugin = Activator.CreateInstance(pluginType) as ICog;
-                    // Services
-                    plugin?.Configure(services);
-                    Console.WriteLine(plugin?.CogName + " version v" + plugin?.CogVersion + " was loaded!");
-                }
-            }
         }
     }
 }

@@ -17,6 +17,11 @@ namespace VoidwyrmCoreAPI.core.cogs
 
         public static List<ICog> Cogs { get; set; }
 
+        public CogLoader()
+        {
+	        Cogs = new List<ICog>();
+        }
+
 
         public void LoadCogs()
         {
@@ -48,7 +53,8 @@ namespace VoidwyrmCoreAPI.core.cogs
 				if(type != null)
 				{
 					var instance = Activator.CreateInstance(type);
-					//Cog cog = Activator.CreateInstance(type) as ICog;
+					ICog cog = Activator.CreateInstance(type) as ICog;
+					Cogs.Add(cog);
 					
 					float version = 0.0f;
 					CogUpdater.CheckForUpdates(type.Namespace.ToString(),null);

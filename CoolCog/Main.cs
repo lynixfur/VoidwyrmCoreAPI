@@ -4,6 +4,8 @@ using VoidwyrmCoreAPI.core.logger;
 
 namespace CoolCog
 {
+    using System.Security.Cryptography.X509Certificates;
+
     public class Main : ICog
     {
         public string CogName { get; set; }
@@ -11,10 +13,16 @@ namespace CoolCog
         public float CogVersion { get; set; }
 
         public string CogPublishID { get; set; }
+        
+        public Certificate CertificateObject {get; set;}
 
         public Main()
         {
             CogName = "CoolCog";
+            CogVersion = 1.0f;
+            CogDescription = "This Cool Ass Cog";
+            CogPublishID = "ckq9timk5000001kzeb5d06bl";
+            CertificateObject = null;
         }
 
         public void Configure()

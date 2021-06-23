@@ -23,13 +23,6 @@ namespace VoidwyrmCoreAPI
             var services = new ServiceCollection();
             
             var loaders = GetPluginLoaders();
-            
-            EventManager x = new EventManager();
-            /*x.PlayerJoined.Invoke(this, new Player_Joined
-                                        {
-                                            name = "tset",
-                                            steamid = "349230823429384"
-                                        });*/
 
             ConfigureServices(services, loaders);
             var cog = services.BuildServiceProvider();

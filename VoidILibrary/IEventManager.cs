@@ -6,7 +6,7 @@ namespace VoidILibrary
 
     public interface IEventManager
     {
-        //event EventHandler Player_Join;
+        event EventHandler<EventArgs> PlayerJoined;
     }
 }
     

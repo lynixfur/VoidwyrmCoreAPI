@@ -15,4 +15,10 @@
       <ProjectReference Include="..\VoidILibrary\VoidILibrary.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="core\logger" />
+      <Folder Include="models\dataprops" />
+      <Folder Include="models\events" />
+    </ItemGroup>
+
 </Project>

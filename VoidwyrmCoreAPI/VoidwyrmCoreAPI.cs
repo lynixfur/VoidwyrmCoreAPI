@@ -2,14 +2,11 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using McMaster.NETCore.Plugins;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 using Voidwyrm_Core.server;
 using VoidwyrmCoreAPI.core;
 using VoidwyrmCoreAPI.core.cogs;
 using VoidwyrmCoreAPI.core.logger;
-using VoidwyrmCoreAPI.events;
 
 namespace VoidwyrmCoreAPI
 {

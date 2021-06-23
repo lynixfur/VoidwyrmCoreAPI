@@ -6,7 +6,6 @@ using System.Text;
 using System.Net;
 using System.Threading.Tasks;
 using VoidwyrmCoreAPI.core.logger;
-using VoidwyrmCoreAPI.events;
 
 namespace Voidwyrm_Core.server
 {
@@ -70,7 +69,6 @@ namespace Voidwyrm_Core.server
 
                 if ((req.HttpMethod == "GET") && (req.Url.AbsolutePath.StartsWith("/api/events")))
                 {
-                    EventManager x = new EventManager();
                     /*x.PlayerJoined.Invoke(this, new PlayerJoin
                                                 {
                                                     Name = "Lynix",

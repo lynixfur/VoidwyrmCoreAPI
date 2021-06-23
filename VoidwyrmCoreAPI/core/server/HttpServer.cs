@@ -68,7 +68,18 @@ namespace Voidwyrm_Core.server
 
                 if ((req.HttpMethod == "GET") && (req.Url.AbsolutePath.StartsWith("/api/events")))
                 {
+<<<<<<< Updated upstream
                     Console.WriteLine("GET Request API Fired! (Events)");
+=======
+                    //EventManager x = new EventManager();
+                    /*x.PlayerJoined.Invoke(this, new PlayerJoin
+                                                {
+                                                    Name = "Lynix",
+                                                    steamid = "349230823429384"
+                                                });*/
+                    VoidLogger.Log(LogObject.LogType.Debug, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, $"Event Triggered -> {req.Url.AbsolutePath.Replace("/api/events/","")}.");
+                    
+>>>>>>> Stashed changes
                     //VoidLogger.Log(LogType.Warn, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, "This path is not implemented (EVENTS).");
                     //eventConsumer.Log(req.HttpMethod);
                 }

@@ -4,8 +4,11 @@ using System.IO;
 using System.Linq;
 using McMaster.NETCore.Plugins;
 using Microsoft.Extensions.DependencyInjection;
+<<<<<<< Updated upstream
 using Microsoft.Extensions.Logging;
 using VoidILibrary;
+=======
+>>>>>>> Stashed changes
 using Voidwyrm_Core.server;
 using VoidwyrmCoreAPI.core;
 using ILogger = VoidILibrary.interfaces.ILogger;

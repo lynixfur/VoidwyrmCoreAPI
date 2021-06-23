@@ -11,7 +11,12 @@
     </ItemGroup>
 
     <ItemGroup>
+<<<<<<< Updated upstream
       <ProjectReference Include="..\VoidILibrary\VoidILibrary.csproj" />
+=======
+      <Folder Include="models\dataprops" />
+      <Folder Include="models\events" />
+>>>>>>> Stashed changes
     </ItemGroup>
 
 </Project>

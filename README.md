@@ -1,9 +1,9 @@
+![Voidwyrm](https://media.discordapp.net/attachments/857116536098521098/857266522262863923/960px.png?width=100&height=100)
 # Voidwyrm API
-![Voidwyrm](https://media.discordapp.net/attachments/857116536098521098/857266522262863923/960px.png?width=554&height=554)
 ![Voidwyrm](https://img.shields.io/badge/Core-v2.0-blue?style=for-the-badge)
 ![Voidwyrm](https://img.shields.io/badge/Voidwyrm-v2.0-blue?style=for-the-badge)
 ![Voidwyrm](https://img.shields.io/badge/Hooked%20Events-∞-cyan?style=for-the-badge)
-![Voidwyrm](https://img.shields.io/badge/Build-Alpha-purple?style=for-the-badge)
+![Voidwyrm](https://img.shields.io/badge/Build-Pre%20Release-cyan?style=for-the-badge)
 
 
 
@@ -25,8 +25,10 @@ cogs/
 ```
 
 # CogModding
+Not available right now.
 
 # SuchSpeed
+Not available right now.
 
 # Limitations
 Voidwyrm Core is using HTTP2 Request Handlers which are Asynced which makes them faster than a normal request but this is not meant to be a replacement for ARK Server API but rather a alternative to which is safer, faster, more dynamic and customizable and easy to understand with our wiki page, forums and documentation!

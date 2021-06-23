@@ -4,8 +4,10 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using VoidwyrmCoreAPI.core.cogs.updater;
 using VoidwyrmCoreAPI.core.constants;
 using VoidwyrmCoreAPI.core.interfaces;
+using VoidwyrmCoreAPI.core.logger;
 
 namespace VoidwyrmCoreAPI.core.cogs
 {
@@ -18,7 +20,8 @@ namespace VoidwyrmCoreAPI.core.cogs
 
         public void LoadCogs()
         {
-			Console.WriteLine("Info : Loading Cogs!");
+	        VoidLogger.Log(LogObject.LogType.Info, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, "Preparing to load cogs...");
+	        
 
 			if (Directory.Exists(FilePaths.CogsFolderName))
 			{
@@ -27,24 +30,46 @@ namespace VoidwyrmCoreAPI.core.cogs
 				{
 					if (file.EndsWith(".dll"))
 					{
+						VoidLogger.Log(LogObject.LogType.Info, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, "Found Possible Cog File : " + file);
+
 						Assembly.LoadFile(Path.GetFullPath(file));
 					}
 				}
 			}
 
-			Type interfaceType = typeof(ICog);
+			Type InterfaceType = typeof(ICog);
 
 			Type[] types = AppDomain.CurrentDomain.GetAssemblies()
 				.SelectMany(a => a.GetTypes())
-				.Where(p => interfaceType.IsAssignableFrom(p) && p.IsClass)
+				.Where(p => InterfaceType.IsAssignableFrom(p) && p.IsClass)
 				.ToArray();
 			foreach (Type type in types)
 			{
-				Cogs.Add((ICog)Activator.CreateInstance(type));
-				Console.WriteLine("Info : Loaded new cog to Core.Core!");
+				if(type != null)
+				{
+					var instance = Activator.CreateInstance(type);
+					//Cog cog = Activator.CreateInstance(type) as ICog;
+					
+					float version = 0.0f;
+					CogUpdater.CheckForUpdates(type.Namespace.ToString(),null);
+
+					VoidLogger.Log(LogObject.LogType.Info, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, $"Loaded {type} version v{version} successfully!");
+					
+					type.InvokeMember("OnLoad", BindingFlags.Public | BindingFlags.Instance | BindingFlags.InvokeMethod, null, instance, null);
+					
+					/*VoidLogger.Log(LogObject.LogType.Debug, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, type.Assembly.ToString());
+					VoidLogger.Log(LogObject.LogType.Debug, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, type.BaseType.ToString());
+					VoidLogger.Log(LogObject.LogType.Debug, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, type.IsPublic.ToString());
+					VoidLogger.Log(LogObject.LogType.Debug, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, type.IsInterface.ToString());
+					VoidLogger.Log(LogObject.LogType.Debug, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, type.IsClass.ToString());
+					VoidLogger.Log(LogObject.LogType.Debug, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, type.IsAbstract.ToString());
+					VoidLogger.Log(LogObject.LogType.Debug, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, type.IsNested.ToString());
+					*/
+				}
 			}
 
-			if(types.Length == 0) { Console.WriteLine("Info : 0 Cogs Loaded!"); }
+			if(types.Length == 0) { VoidLogger.Log(LogObject.LogType.Info, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, $"Loaded 0 Cogs."); }
+			else { VoidLogger.Log(LogObject.LogType.Info, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, $"Loaded {types.Length} Cogs."); }
 		}
     }
 }

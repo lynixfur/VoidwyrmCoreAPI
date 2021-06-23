@@ -1,5 +1,6 @@
 using System;
 using VoidwyrmCoreAPI.core.interfaces;
+using VoidwyrmCoreAPI.core.logger;
 
 namespace CoolCog
 {
@@ -11,6 +12,11 @@ namespace CoolCog
 
         public string CogPublishID { get; set; }
 
+        public Main()
+        {
+            CogName = "CoolCog";
+        }
+
         public void Configure()
         {
 
@@ -18,7 +24,7 @@ namespace CoolCog
 
         public void OnLoad()
         {
-            Console.WriteLine($"CoolCog : Hi from Cog!");
+            VoidLogger.Log(LogObject.LogType.Warn, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, "Cogs can now access Log Functions WHAT!?!?!?!??!");
         }
 
         public void OnUnload()

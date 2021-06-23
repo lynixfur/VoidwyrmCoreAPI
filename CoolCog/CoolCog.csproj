@@ -6,7 +6,9 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\VoidwyrmCoreAPI\VoidwyrmCoreAPI.csproj" />
+      <Reference Include="VoidwyrmCoreAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+        <HintPath>..\bin\netcoreapp3.1\VoidwyrmCoreAPI.dll</HintPath>
+      </Reference>
     </ItemGroup>
 
 </Project>

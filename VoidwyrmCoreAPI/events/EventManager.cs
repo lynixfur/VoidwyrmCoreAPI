@@ -1,16 +1,11 @@
+using VoidILibrary;
+
 namespace VoidwyrmCoreAPI.events
 {
     using System;
 
-    public class EventManager
+    public class EventManager: IEventManager
     {
-        public EventHandler<HttpRequest> HttpRequestRecieved;
-        public EventHandler<Player_Joined> PlayerJoined;
-    }
-
-    public class Player_Joined
-    {
-        public string name { get; set; }
-        public string steamid { get; set; }
+        public event EventHandler<EventArgs> PlayerJoined;
     }
 }

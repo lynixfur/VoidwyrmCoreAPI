@@ -5,6 +5,8 @@ using System.IO;
 using System.Text;
 using System.Net;
 using System.Threading.Tasks;
+using VoidwyrmCoreAPI.core.logger;
+using VoidwyrmCoreAPI.events;
 
 namespace Voidwyrm_Core.server
 {
@@ -68,7 +70,14 @@ namespace Voidwyrm_Core.server
 
                 if ((req.HttpMethod == "GET") && (req.Url.AbsolutePath.StartsWith("/api/events")))
                 {
-                    Console.WriteLine("GET Request API Fired! (Events)");
+                    EventManager x = new EventManager();
+                    /*x.PlayerJoined.Invoke(this, new PlayerJoin
+                                                {
+                                                    Name = "Lynix",
+                                                    steamid = "349230823429384"
+                                                });*/
+                    VoidLogger.Log(LogObject.LogType.Debug, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, $"Event Triggered -> {req.Url.AbsolutePath.Replace("/api/events/","")}.");
+                    
                     //VoidLogger.Log(LogType.Warn, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, "This path is not implemented (EVENTS).");
                     //eventConsumer.Log(req.HttpMethod);
                 }
@@ -93,8 +102,9 @@ namespace Voidwyrm_Core.server
 
         public void StartServer()
         {
-            Console.WriteLine("Lisening for connections at 4951");
-           //VoidLogger.Log(LogType.Info, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, "Listening for connections.");
+            VoidLogger.Log(LogObject.LogType.Info, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, $"Enabled SuchSpeedHTTP.");
+            VoidLogger.Log(LogObject.LogType.Info, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, $"Lisening for connections at 4951");
+            //VoidLogger.Log(LogType.Info, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, "Listening for connections.");
             // Create a Http server and start listening for incoming connections
             Listener = new HttpListener();
             Listener.Prefixes.Add(Url);

@@ -4,6 +4,7 @@
         <OutputType>Exe</OutputType>
         <TargetFramework>netcoreapp3.1</TargetFramework>
         <OutputPath>..\bin</OutputPath>
+        <ApplicationIcon>Voidwyrm.ico</ApplicationIcon>
     </PropertyGroup>
 
     <ItemGroup>
@@ -13,6 +14,11 @@
 
     <ItemGroup>
       <ProjectReference Include="..\VoidILibrary\VoidILibrary.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="models\dataprops" />
+      <Folder Include="models\events" />
     </ItemGroup>
 
 </Project>

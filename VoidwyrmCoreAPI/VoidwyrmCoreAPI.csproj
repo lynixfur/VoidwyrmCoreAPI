@@ -4,7 +4,7 @@
         <OutputType>Exe</OutputType>
         <TargetFramework>netcoreapp3.1</TargetFramework>
         <OutputPath>..\bin</OutputPath>
-        <ApplicationIcon>Voidwyrm.ico</ApplicationIcon>
+        <ApplicationIcon>VoidwyrmApp.ico</ApplicationIcon>
     </PropertyGroup>
 
     <ItemGroup>

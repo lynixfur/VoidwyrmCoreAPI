@@ -6,7 +6,6 @@ namespace VoidwyrmCoreAPI.events
     {
         public EventHandler<HttpRequest> HttpRequestRecieved;
         public EventHandler<Player_Joined> PlayerJoined;
-        public EventHandler<Player_Left> PlayerLeft;
     }
 
     public class Player_Joined

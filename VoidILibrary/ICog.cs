@@ -6,11 +6,12 @@ namespace VoidILibrary
 {
     public interface ICog
     {
-        public string CogName {get; set;}
-        public string CogDescription {get; set;}
-        
-        public float CogVersion {get; set;}
-        
+        public string CogName { get; set; }
+        public string CogDescription { get; set; }
+
+        public float CogVersion { get; set; }
+
         void Configure(IServiceCollection services);
-        void InitializeEvents(EventManager eventManager);
+        void InitializeEvents(IEventManager eventManager);
+    }
 }

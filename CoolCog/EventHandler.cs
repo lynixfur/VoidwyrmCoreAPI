@@ -12,12 +12,12 @@ namespace CoolCog
             eventManager = _eventManager;
         }
 
-        public Task InitializeListener()
+        public async Task InitializeListener()
         {
             eventManager.PlayerJoined += async (source, _args) =>
             {
                 await OnPlayerJoin(_args);
-            }
+            };
         }
 
         private async Task OnPlayerJoin(Player_Joined playerJoined)

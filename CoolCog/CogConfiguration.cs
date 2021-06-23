@@ -27,6 +27,11 @@ namespace CoolCog
             services.AddSingleton<ILogger, Main>();
         }
 
+        public void InitializeEvents(IEventManager eventManager)
+        {
+            throw new NotImplementedException();
+        }
+
         public void InitializeEvents(EventManager eventManager)
         {
             var eventServices = new ServiceCollection();

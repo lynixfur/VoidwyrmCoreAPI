@@ -8,11 +8,11 @@ using Microsoft.Extensions.Logging;
 using VoidILibrary;
 using Voidwyrm_Core.server;
 using VoidwyrmCoreAPI.core;
+using VoidwyrmCoreAPI.events;
 using ILogger = VoidILibrary.interfaces.ILogger;
 
 namespace VoidwyrmCoreAPI
 {
-    using global::VoidwyrmCoreAPI.events;
 
     class VoidwyrmCoreAPI
     {
@@ -25,11 +25,11 @@ namespace VoidwyrmCoreAPI
             var loaders = GetPluginLoaders();
             
             EventManager x = new EventManager();
-            x.PlayerJoined.Invoke(this, new Player_Joined
+            /*x.PlayerJoined.Invoke(this, new Player_Joined
                                         {
-                                            name = PlayerJoinReply.DataProps.Name,
-                                            steamid = PlayerJoinReply.DataProps.SteamId
-                                        });
+                                            name = "tset",
+                                            steamid = "349230823429384"
+                                        });*/
 
             ConfigureServices(services, loaders);
             var cog = services.BuildServiceProvider();

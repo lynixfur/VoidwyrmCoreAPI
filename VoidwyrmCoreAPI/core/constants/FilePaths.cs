@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace VoidwyrmCoreAPI.core.constants
+﻿namespace VoidwyrmCoreAPI.core.constants
 {
     class FilePaths
     {

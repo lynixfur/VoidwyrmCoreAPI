@@ -1,7 +1,6 @@
 // WARNING! This is just a simple HTTP Server for testing and is not final or optimized for large loads!
 
 using System;
-using System.IO;
 using System.Text;
 using System.Net;
 using System.Threading.Tasks;
@@ -101,7 +100,7 @@ namespace Voidwyrm_Core.server
         public void StartServer()
         {
             VoidLogger.Log(LogObject.LogType.Info, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, $"Enabled SuchSpeedHTTP.");
-            VoidLogger.Log(LogObject.LogType.Info, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, $"Lisening for connections at 4951");
+            VoidLogger.Log(LogObject.LogType.Info, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, $"Listening for connections at 4951");
             //VoidLogger.Log(LogType.Info, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, "Listening for connections.");
             // Create a Http server and start listening for incoming connections
             Listener = new HttpListener();

@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using Microsoft.Extensions.DependencyInjection;
 using Voidwyrm_Core.server;
 using VoidwyrmCoreAPI.core;
@@ -18,7 +15,7 @@ namespace VoidwyrmCoreAPI
             var services = new ServiceCollection();
             float version = 2.0f;
             
-            System.AppDomain.CurrentDomain.UnhandledException += UnhandledExceptionTrapper;
+            AppDomain.CurrentDomain.UnhandledException += UnhandledExceptionTrapper;
             
             ArtHeaders.TitleHeader(version);
             VoidLogger.Log(LogObject.LogType.Warn, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, "This Build is Experimental and may not be stable!!!");

@@ -1,4 +1,3 @@
-using System;
 using VoidwyrmCoreAPI.core.interfaces;
 using VoidwyrmCoreAPI.core.logger;
 

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 using VoidwyrmCoreAPI.core.cogs.updater;
 using VoidwyrmCoreAPI.core.constants;
 using VoidwyrmCoreAPI.core.interfaces;
@@ -17,10 +16,15 @@ namespace VoidwyrmCoreAPI.core.cogs
 
         public static List<ICog> Cogs { get; set; }
 
+        public CogLoader()
+        {
+	        Cogs = new List<ICog>();
+        }
+
 
         public void LoadCogs()
         {
-	        VoidLogger.Log(LogObject.LogType.Info, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, "Preparing to load cogs...");
+	        VoidLogger.Log(LogObject.LogType.Info, Assembly.GetExecutingAssembly().GetName().Name, "Preparing to load cogs...");
 	        
 
 			if (Directory.Exists(FilePaths.CogsFolderName))
@@ -30,30 +34,31 @@ namespace VoidwyrmCoreAPI.core.cogs
 				{
 					if (file.EndsWith(".dll"))
 					{
-						VoidLogger.Log(LogObject.LogType.Info, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, "Found Possible Cog File : " + file);
+						VoidLogger.Log(LogObject.LogType.Info, Assembly.GetExecutingAssembly().GetName().Name, "Found Possible Cog File : " + file);
 
 						Assembly.LoadFile(Path.GetFullPath(file));
 					}
 				}
 			}
 
-			Type InterfaceType = typeof(ICog);
+			Type interfaceType = typeof(ICog);
 
 			Type[] types = AppDomain.CurrentDomain.GetAssemblies()
 				.SelectMany(a => a.GetTypes())
-				.Where(p => InterfaceType.IsAssignableFrom(p) && p.IsClass)
+				.Where(p => interfaceType.IsAssignableFrom(p) && p.IsClass)
 				.ToArray();
 			foreach (Type type in types)
 			{
 				if(type != null)
 				{
 					var instance = Activator.CreateInstance(type);
-					//Cog cog = Activator.CreateInstance(type) as ICog;
+					ICog cog = Activator.CreateInstance(type) as ICog;
+					Cogs.Add(cog);
 					
 					float version = 0.0f;
-					CogUpdater.CheckForUpdates(type.Namespace.ToString(),null);
+					CogUpdater.CheckForUpdates(type.Namespace,null);
 
-					VoidLogger.Log(LogObject.LogType.Info, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, $"Loaded {type} version v{version} successfully!");
+					VoidLogger.Log(LogObject.LogType.Info, Assembly.GetExecutingAssembly().GetName().Name, $"Loaded {type} version v{version} successfully!");
 					
 					type.InvokeMember("OnLoad", BindingFlags.Public | BindingFlags.Instance | BindingFlags.InvokeMethod, null, instance, null);
 					
@@ -68,8 +73,8 @@ namespace VoidwyrmCoreAPI.core.cogs
 				}
 			}
 
-			if(types.Length == 0) { VoidLogger.Log(LogObject.LogType.Info, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, $"Loaded 0 Cogs."); }
-			else { VoidLogger.Log(LogObject.LogType.Info, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, $"Loaded {types.Length} Cogs."); }
+			if(types.Length == 0) { VoidLogger.Log(LogObject.LogType.Info, Assembly.GetExecutingAssembly().GetName().Name, $"Loaded 0 Cogs."); }
+			else { VoidLogger.Log(LogObject.LogType.Info, Assembly.GetExecutingAssembly().GetName().Name, $"Loaded {types.Length} Cogs."); }
 		}
     }
 }

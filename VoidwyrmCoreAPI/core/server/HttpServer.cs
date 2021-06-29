@@ -8,8 +8,17 @@ using VoidwyrmCoreAPI.core.logger;
 
 namespace Voidwyrm_Core.server
 {
+    using VoidwyrmCoreAPI.Events;
+    using VoidwyrmCoreAPI.Events.Models;
+
     class HttpServer
     {
+        private EventManager eventManager;
+
+        public HttpServer(EventManager eventManager)
+        {
+            this.eventManager = eventManager;
+        }
 
         public static HttpListener Listener;
         public static string Url = "http://localhost:4951/";
@@ -68,6 +77,7 @@ namespace Voidwyrm_Core.server
 
                 if ((req.HttpMethod == "GET") && (req.Url.AbsolutePath.StartsWith("/api/events")))
                 {
+<<<<<<< Updated upstream
                     /*x.PlayerJoined.Invoke(this, new PlayerJoin
                                                 {
                                                     Name = "Lynix",
@@ -77,6 +87,22 @@ namespace Voidwyrm_Core.server
                     
                     //VoidLogger.Log(LogType.Warn, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, "This path is not implemented (EVENTS).");
                     //eventConsumer.Log(req.HttpMethod);
+=======
+                    /*CogLoader.Cogs.ForEach(delegate(ICog cog)
+                    {
+                        //cog.EventHandler(req.Headers.ToString());
+                        
+                        
+                        
+                    });*/
+
+                    var x = new PlayerJoin
+                            {
+                                SomethingRandom = 1
+                            };
+            
+                    eventManager.OnPlayerJoined(x);
+>>>>>>> Stashed changes
                 }
 
                 if ((req.HttpMethod == "GET") && (req.Url.AbsolutePath == "/api/ping"))

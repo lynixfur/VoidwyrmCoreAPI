@@ -5,6 +5,8 @@ using System.Text;
 using System.Net;
 using System.Threading.Tasks;
 using VoidwyrmCoreAPI.core.logger;
+using VoidwyrmCoreAPI.core.cogs;
+using VoidwyrmCoreAPI.core.interfaces;
 
 namespace Voidwyrm_Core.server
 {
@@ -66,17 +68,12 @@ namespace Voidwyrm_Core.server
                     //VoidLogger.Log(LogType.Warn, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, "This path is not implemented.");
                 }
 
-                if ((req.HttpMethod == "GET") && (req.Url.AbsolutePath.StartsWith("/api/events")))
+                if ((req.HttpMethod == "POST") && (req.Url.AbsolutePath.StartsWith("/api/events")))
                 {
-                    /*x.PlayerJoined.Invoke(this, new PlayerJoin
-                                                {
-                                                    Name = "Lynix",
-                                                    steamid = "349230823429384"
-                                                });*/
-                    VoidLogger.Log(LogObject.LogType.Debug, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, $"Event Triggered -> {req.Url.AbsolutePath.Replace("/api/events/","")}.");
-                    
-                    //VoidLogger.Log(LogType.Warn, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, "This path is not implemented (EVENTS).");
-                    //eventConsumer.Log(req.HttpMethod);
+                    CogLoader.Cogs.ForEach(delegate(ICog cog)
+                    {
+                        cog.EventHandler(req.Headers.ToString());
+                    });
                 }
 
                 if ((req.HttpMethod == "GET") && (req.Url.AbsolutePath == "/api/ping"))

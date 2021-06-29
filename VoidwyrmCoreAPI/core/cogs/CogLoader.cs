@@ -60,7 +60,7 @@ namespace VoidwyrmCoreAPI.core.cogs
 
 					VoidLogger.Log(LogObject.LogType.Info, Assembly.GetExecutingAssembly().GetName().Name, $"Loaded {type} version v{version} successfully!");
 					
-					type.InvokeMember("OnLoad", BindingFlags.Public | BindingFlags.Instance | BindingFlags.InvokeMethod, null, instance, null);
+					//type.InvokeMember("OnLoad", BindingFlags.Public | BindingFlags.Instance | BindingFlags.InvokeMethod, null, instance, null);
 					
 					/*VoidLogger.Log(LogObject.LogType.Debug, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, type.Assembly.ToString());
 					VoidLogger.Log(LogObject.LogType.Debug, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, type.BaseType.ToString());

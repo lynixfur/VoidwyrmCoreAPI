@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Linq;
 using Microsoft.Extensions.DependencyInjection;
 using Voidwyrm_Core.server;
 using VoidwyrmCoreAPI.core;
 using VoidwyrmCoreAPI.core.cogs;
+using VoidwyrmCoreAPI.core.interfaces;
 using VoidwyrmCoreAPI.core.logger;
 
 namespace VoidwyrmCoreAPI
@@ -27,7 +29,11 @@ namespace VoidwyrmCoreAPI
 
             // Test Cog Example
             //ICog cog = (ICog)CogLoader.Cogs.FirstOrDefault(p => p.CogName == "CoolCog");
-           // Console.WriteLine(cog.CogVersion);
+
+            CogLoader.Cogs.ForEach(delegate(ICog cog)
+            {
+                Console.WriteLine(cog.CogName);
+            });
 
             // Start Rest API
             HttpServer httpServer = new HttpServer();

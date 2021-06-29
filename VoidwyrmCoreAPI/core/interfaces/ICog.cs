@@ -10,6 +10,10 @@
         void Configure();
         void OnLoad();
         void OnUnload();
-        void EventHandler();
+        void EventHandler(string httpData);
+
+        void AdditionalConfigurations(string httpData);
+
+        void EventHandler(string httpData);
     }
 }

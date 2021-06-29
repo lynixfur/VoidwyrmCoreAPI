@@ -2,6 +2,8 @@ using VoidwyrmCoreAPI.core.interfaces;
 using VoidwyrmCoreAPI.core.logger;
 using System;
 using System.Security.Cryptography.X509Certificates;
+using System.Threading.Tasks;
+using VoidwyrmLib;
 
 namespace CoolCog
 {
@@ -14,6 +16,9 @@ namespace CoolCog
         public string CogPublishID { get; set; }
         
         public Certificate CertificateObject {get; set;}
+
+        private EventManager eventManager;
+        private EventHandler eventHandler;
 
         public Main()
         {
@@ -29,10 +34,20 @@ namespace CoolCog
 
         }
 
-        public void OnLoad()
+        public void OnLoad(EventManager _eventManager)
         {
+            eventManager = _eventManager;
+            eventHandler = new EventHandler(eventManager);
+            
+            Task.WaitAll(SubscribeEvent());
             VoidLogger.Log(LogObject.LogType.Warn, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, "Cogs can now access Log Functions WHAT!?!?!?!??!");
         }
+
+        public async Task SubscribeEvent()
+        {
+            await eventHandler.Subscribe();
+        }
+
 
         public void OnUnload()
         {
@@ -51,7 +66,7 @@ namespace CoolCog
 
         }
 
-        public void EventHandler(object dataProps)
+        public void EventHandler(string dataProps)
         {
             addVoidwyrm();
             Console.WriteLine($"{dataProps}");
@@ -71,7 +86,5 @@ namespace CoolCog
         {
 
         }
-
-
     }
 }

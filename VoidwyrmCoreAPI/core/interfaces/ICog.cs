@@ -1,4 +1,6 @@
-﻿namespace VoidwyrmCoreAPI.core.interfaces
+﻿using VoidwyrmLib;
+
+namespace VoidwyrmCoreAPI.core.interfaces
 {
     public interface ICog
     {
@@ -8,12 +10,10 @@
         public string CogPublishID { get; set; }
 
         void Configure();
-        void OnLoad();
+        void OnLoad(EventManager eventManager);
         void OnUnload();
-        void EventHandler(string httpData);
+        void EventHandler(string dataProps);
 
-        void AdditionalConfigurations(string httpData);
-
-        void EventHandler(string httpData);
+        void AdditionalConfigurations(string dataProps);
     }
 }

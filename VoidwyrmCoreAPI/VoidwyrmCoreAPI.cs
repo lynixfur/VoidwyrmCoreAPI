@@ -6,14 +6,18 @@ using VoidwyrmCoreAPI.core;
 using VoidwyrmCoreAPI.core.cogs;
 using VoidwyrmCoreAPI.core.interfaces;
 using VoidwyrmCoreAPI.core.logger;
+using VoidwyrmLib;
 
 namespace VoidwyrmCoreAPI
 {
 
     class VoidwyrmCoreAPI
     {
+        private static EventManager eventManager;
+
         static void Main(string[] args)
         {
+            eventManager = new EventManager();
             var services = new ServiceCollection();
             float version = 2.0f;
             
@@ -33,10 +37,11 @@ namespace VoidwyrmCoreAPI
             CogLoader.Cogs.ForEach(delegate(ICog cog)
             {
                 Console.WriteLine(cog.CogName);
+                cog.OnLoad(eventManager);
             });
 
             // Start Rest API
-            HttpServer httpServer = new HttpServer();
+            HttpServer httpServer = new HttpServer(eventManager);
             httpServer.StartServer();
         }
         

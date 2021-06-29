@@ -7,12 +7,19 @@ using System.Threading.Tasks;
 using VoidwyrmCoreAPI.core.logger;
 using VoidwyrmCoreAPI.core.cogs;
 using VoidwyrmCoreAPI.core.interfaces;
+using VoidwyrmLib;
+using VoidwyrmCoreAPI.core.events.models;
 
 namespace Voidwyrm_Core.server
 {
     class HttpServer
     {
+        private EventManager eventManager;
 
+        public HttpServer(EventManager eventManager)
+        {
+            this.eventManager = eventManager;
+        }
         public static HttpListener Listener;
         public static string Url = "http://localhost:4951/";
         public static string WelcomePageData =
@@ -68,12 +75,14 @@ namespace Voidwyrm_Core.server
                     //VoidLogger.Log(LogType.Warn, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, "This path is not implemented.");
                 }
 
-                if ((req.HttpMethod == "POST") && (req.Url.AbsolutePath.StartsWith("/api/events")))
+                if ((req.HttpMethod == "GET") && (req.Url.AbsolutePath.StartsWith("/api/events")))
                 {
-                    CogLoader.Cogs.ForEach(delegate(ICog cog)
-                    {
-                        cog.EventHandler(req.Headers.ToString());
-                    });
+                    var x = new PlayerJoin
+                            {
+                                SomethingRandom = 1
+                            };
+
+                    eventManager.OnPlayerJoined(x);
                 }
 
                 if ((req.HttpMethod == "GET") && (req.Url.AbsolutePath == "/api/ping"))

@@ -13,6 +13,7 @@ using VoidwyrmCoreAPI.core.events;
 using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using static VoidwyrmCoreAPI.core.logger.LogObject;
 
 namespace Voidwyrm_Core.server
 {
@@ -86,11 +87,13 @@ namespace Voidwyrm_Core.server
 
                     dynamic json  = JsonConvert.DeserializeObject(eventData);
                     
-
+                    // Route Event
                     EventRouter eventRouter = new EventRouter(eventManager);
-                    eventRouter.RouteEvent(req.Url.AbsolutePath.Replace("/api/events/",""));
-                    Console.WriteLine(req.Url.AbsolutePath.Replace("/api/events/","") + " -> " + eventData);
-                    Console.WriteLine(json.DataSource);
+                    eventRouter.RouteEvent(json);
+                    
+                    
+                    VoidLogger.Log(LogType.Warn, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, eventData);
+               
                 }
 
                 if ((req.HttpMethod == "GET") && (req.Url.AbsolutePath == "/api/ping"))

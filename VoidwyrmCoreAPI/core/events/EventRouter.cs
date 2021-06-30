@@ -12,13 +12,14 @@ namespace VoidwyrmCoreAPI.core.events
             this.eventManager = eventManager;
         }
 
-        public void RouteEvent(string test) 
+        public void RouteEvent(dynamic data) 
         {
-            switch(test) {
+            switch((string)data.EventName) {
                 case "PlayerConnected":
                         eventManager.OnPlayerConnected(new PlayerConnected
                         {
-                            SomethingRandom = 1053
+                            SomethingRandom = 1053,
+                            DataObject = data
                         });
                         break;
                 case "PlayerDisconnected":

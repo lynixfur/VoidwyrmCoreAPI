@@ -2,6 +2,8 @@ namespace CoolCog
 {
     using System;
     using System.Threading.Tasks;
+    using Discord;
+    using Discord.WebSocket;
     using VoidwyrmCoreAPI.core.events.models;
     using VoidwyrmCoreAPI.core.logger;
     using VoidwyrmLib;
@@ -9,10 +11,12 @@ namespace CoolCog
     public class EventHandler
     {
         private readonly EventManager eventManager;
+        private readonly DiscordSocketClient discordSocketClient;
 
-        public EventHandler(EventManager eventManager)
+        public EventHandler(EventManager eventManager, DiscordSocketClient client)
         {
             this.eventManager = eventManager;
+            this.discordSocketClient = client;
         }
 
         public async Task Subscribe()
@@ -25,7 +29,14 @@ namespace CoolCog
 
         private void OnPlayerConnected(object source, PlayerConnected args)
         {
-            VoidLogger.Log(LogObject.LogType.Info, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, $"Event Fired! -> PlayerDisconnected (Data : {args.SomethingRandom})");
+            VoidLogger.Log(LogObject.LogType.Info, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, $"Event Fired! -> PlayerConnected (Data : {args.SomethingRandom})");
+            var testChannel = discordSocketClient.GetChannel((ulong)859785136220405790) as IMessageChannel;
+            PlayerConnectedAsync(testChannel, args).GetAwaiter().GetResult();
+        }
+
+        public async Task PlayerConnectedAsync(IMessageChannel channel, PlayerConnected args)
+	    {
+            await channel.SendMessageAsync($"The Player has connected! ```{args.DataObject}```");
         }
 
         private void OnPlayerDisconnected(object source, PlayerDisconnected args)

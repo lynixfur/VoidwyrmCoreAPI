@@ -24,19 +24,13 @@ namespace VoidwyrmCoreAPI
             AppDomain.CurrentDomain.UnhandledException += UnhandledExceptionTrapper;
             
             ArtHeaders.TitleHeader(version);
-            VoidLogger.Log(LogObject.LogType.Warn, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, "This Build is Experimental and may not be stable!!!");
+            VoidLogger.Log(LogObject.LogType.Warn, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, "This Build is a Pre-Release and may not be stable!");
 
-            
-            // Load Cogs into Memory
             try { CogLoader loader = new CogLoader(); loader.LoadCogs(); }
             catch(Exception e) { Console.WriteLine("Error : There was an error loading the cogs : " + e + "!"); }
 
-            // Test Cog Example
-            //ICog cog = (ICog)CogLoader.Cogs.FirstOrDefault(p => p.CogName == "CoolCog");
-
             CogLoader.Cogs.ForEach(delegate(ICog cog)
             {
-                Console.WriteLine(cog.CogName);
                 cog.OnLoad(eventManager);
             });
 

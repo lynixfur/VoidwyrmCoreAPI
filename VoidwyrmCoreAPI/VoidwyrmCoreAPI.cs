@@ -6,10 +6,10 @@ using VoidwyrmCoreAPI.core;
 using VoidwyrmCoreAPI.core.cogs;
 using VoidwyrmCoreAPI.core.interfaces;
 using VoidwyrmCoreAPI.core.logger;
-using VoidwyrmLib;
 
 namespace VoidwyrmCoreAPI
 {
+    using global::VoidwyrmCoreAPI.core.events;
 
     class VoidwyrmCoreAPI
     {

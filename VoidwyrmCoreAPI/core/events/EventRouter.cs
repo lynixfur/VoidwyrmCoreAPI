@@ -1,9 +1,11 @@
 using System;
 using VoidwyrmCoreAPI.core.events.models;
-using VoidwyrmLib;
 
 namespace VoidwyrmCoreAPI.core.events
-{    
+{
+    using global::VoidwyrmCoreAPI.core.Enums;
+    using Newtonsoft.Json.Linq;
+
     public class EventRouter
     {
         private EventManager eventManager;
@@ -12,25 +14,34 @@ namespace VoidwyrmCoreAPI.core.events
             this.eventManager = eventManager;
         }
 
-        public void RouteEvent(dynamic data) 
+        public void RouteCoreEvent(CoreEvent data)
         {
-            switch((string)data.EventName) {
+            JObject eventObject = data.DataProps as JObject;
+
+
+            switch(data.EventName) {
                 case "PlayerConnected":
-                        eventManager.OnPlayerConnected(new PlayerConnected
-                        {
-                            SomethingRandom = 1053,
-                            DataObject = data
-                        });
-                        break;
+                    if (eventObject != null) eventManager.OnPlayerConnected(eventObject.ToObject<PlayerConnected>());
+                    break;
                 case "PlayerDisconnected":
-                        eventManager.OnPlayerDisconnected(new PlayerDisconnected
-                        {
-                            SomethingRandom = 500
-                        });
-                        break;
-                default:
-                        Console.WriteLine("Custom Event!");
-                        break;                        
+                    if (eventObject != null) eventManager.OnPlayerDisconnected(eventObject.ToObject<PlayerDisconnected>());
+                    break;                    
+            }
+        }
+
+        public void RouteCustomEvent(CoreEvent data)
+        {
+            switch (data.DataType)
+            {
+                case EventTypes.CustomCommand:
+                    eventManager.OnCustomCommand(data);
+                    break;
+                case EventTypes.CustomEvent:
+                    eventManager.OnCustomEvent(data);
+                    break;
+                case EventTypes.CustomOverride:
+                    eventManager.OnCustomOverride(data);
+                    break;
             }
         }
     }

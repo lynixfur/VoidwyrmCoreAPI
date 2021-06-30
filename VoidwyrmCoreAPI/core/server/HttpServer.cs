@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using VoidwyrmCoreAPI.core.logger;
 using VoidwyrmCoreAPI.core.cogs;
 using VoidwyrmCoreAPI.core.interfaces;
-using VoidwyrmLib;
 using VoidwyrmCoreAPI.core.events.models;
 using VoidwyrmCoreAPI.core.events;
 using System.IO;
@@ -17,6 +16,9 @@ using static VoidwyrmCoreAPI.core.logger.LogObject;
 
 namespace Voidwyrm_Core.server
 {
+    using VoidwyrmCoreAPI.core;
+    using VoidwyrmCoreAPI.core.Enums;
+
     class HttpServer
     {
         private EventManager eventManager;
@@ -82,16 +84,36 @@ namespace Voidwyrm_Core.server
 
                 if ((req.HttpMethod == "POST") && (req.Url.AbsolutePath.StartsWith("/api/events")))
                 {
+                    EventRouter eventRouter = new EventRouter(eventManager);
+
+
                     //Get Event Data from HTTP
                     var eventData = new StreamReader(req.InputStream).ReadToEnd();
 
-                    dynamic json  = JsonConvert.DeserializeObject(eventData);
-                    
-                    // Route Event
-                    EventRouter eventRouter = new EventRouter(eventManager);
-                    eventRouter.RouteEvent(json);
-                    
-                    
+                    CoreEvent json  = JsonConvert.DeserializeObject<CoreEvent>(eventData);
+
+                    //Determine if EventType is Custom and Route Event
+                    if (json != null)
+                    {
+                        switch (json.DataType)
+                        {
+                            case EventTypes.CustomCommand:
+                            case EventTypes.CustomEvent:
+                            case EventTypes.CustomOverride:
+                                eventRouter.RouteCustomEvent(json);
+                                break;
+
+                            case EventTypes.Configuration:
+                            case EventTypes.Event:
+                            case EventTypes.Override:
+                                eventRouter.RouteCoreEvent(json.DataProps);
+                                break;
+                            default:
+                                // Handle error here
+                                break;
+                        }
+                    }
+
                     VoidLogger.Log(LogType.Warn, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, eventData);
                
                 }

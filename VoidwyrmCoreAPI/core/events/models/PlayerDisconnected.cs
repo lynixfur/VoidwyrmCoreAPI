@@ -1,9 +1,11 @@
-using System;
-
 namespace VoidwyrmCoreAPI.core.events.models
 {
-    public class PlayerDisconnected : EventArgs
+    using global::VoidwyrmCoreAPI.core.events.models.SourceEvents;
+
+    public class PlayerDisconnected : VoidwyrmEvent
     {
-        public int SomethingRandom { get; set; }
+        public string SteamId { get; set; }
+        public string TribeId { get; set; }
+        public string PlayerId { get; set; }
     }
 }

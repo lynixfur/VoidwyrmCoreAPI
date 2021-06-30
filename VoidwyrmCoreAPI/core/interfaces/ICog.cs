@@ -1,7 +1,7 @@
-﻿using VoidwyrmLib;
-
-namespace VoidwyrmCoreAPI.core.interfaces
+﻿namespace VoidwyrmCoreAPI.core.interfaces
 {
+    using global::VoidwyrmCoreAPI.core.events;
+
     public interface ICog
     {
         public string CogName { get; set; }

@@ -1,15 +1,15 @@
 using VoidwyrmCoreAPI.core.interfaces;
 using VoidwyrmCoreAPI.core.logger;
 using System;
-using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
-using VoidwyrmLib;
 using Discord.WebSocket;
 using Discord;
-using Discord.Net.WebSockets;
 
 namespace CoolCog
 {
+    using VoidwyrmCoreAPI.core;
+    using VoidwyrmCoreAPI.core.events;
+
     public class Main : ICog
     {
         public string CogName { get; set; }

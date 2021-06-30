@@ -4,9 +4,10 @@ namespace CoolCog
     using System.Threading.Tasks;
     using Discord;
     using Discord.WebSocket;
+    using VoidwyrmCoreAPI.core;
+    using VoidwyrmCoreAPI.core.events;
     using VoidwyrmCoreAPI.core.events.models;
     using VoidwyrmCoreAPI.core.logger;
-    using VoidwyrmLib;
 
     public class EventHandler
     {

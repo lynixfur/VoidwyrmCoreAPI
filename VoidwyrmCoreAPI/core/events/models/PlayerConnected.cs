@@ -1,11 +1,11 @@
-using System;
-
 namespace VoidwyrmCoreAPI.core.events.models
 {
-    public class PlayerConnected : EventArgs
-    {
-        public int SomethingRandom { get; set; }
+    using global::VoidwyrmCoreAPI.core.events.models.SourceEvents;
 
-        public dynamic DataObject { get; set; }
+    public class PlayerConnected : VoidwyrmEvent
+    {
+        public string SteamId { get; set; }
+        public string TribeId { get; set; }
+        public string PlayerId { get; set; }
     }
 }

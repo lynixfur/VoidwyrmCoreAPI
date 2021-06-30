@@ -9,6 +9,8 @@ using VoidwyrmCoreAPI.core.cogs;
 using VoidwyrmCoreAPI.core.interfaces;
 using VoidwyrmLib;
 using VoidwyrmCoreAPI.core.events.models;
+using VoidwyrmCoreAPI.core.events;
+using System.IO;
 
 namespace Voidwyrm_Core.server
 {
@@ -75,14 +77,15 @@ namespace Voidwyrm_Core.server
                     //VoidLogger.Log(LogType.Warn, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, "This path is not implemented.");
                 }
 
-                if ((req.HttpMethod == "GET") && (req.Url.AbsolutePath.StartsWith("/api/events")))
+                if ((req.HttpMethod == "POST") && (req.Url.AbsolutePath.StartsWith("/api/events")))
                 {
-                    var x = new PlayerJoin
-                            {
-                                SomethingRandom = 1
-                            };
+                    //Get Event Data from HTTP
+                    var eventData = new StreamReader(req.InputStream).ReadToEnd();
 
-                    eventManager.OnPlayerJoined(x);
+
+                    EventRouter eventRouter = new EventRouter(eventManager);
+                    eventRouter.RouteEvent(req.Url.AbsolutePath.Replace("/api/events/",""));
+                    Console.WriteLine(req.Url.AbsolutePath.Replace("/api/events/","") + " -> " + eventData);
                 }
 
                 if ((req.HttpMethod == "GET") && (req.Url.AbsolutePath == "/api/ping"))

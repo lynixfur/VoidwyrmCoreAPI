@@ -5,11 +5,16 @@ namespace VoidwyrmLib
 {
     public class EventManager
     {
-        public event EventHandler<PlayerJoin> PlayerJoined; 
+        public event EventHandler<PlayerConnected> PlayerConnected; 
+        public event EventHandler<PlayerDisconnected> PlayerDisconnected; 
 
-        public virtual void OnPlayerJoined(PlayerJoin e)
+        public virtual void OnPlayerConnected(PlayerConnected e)
         {
-            if (PlayerJoined != null) PlayerJoined(this, e);
+            if (PlayerConnected != null) PlayerConnected(this, e);
+        }
+        public virtual void OnPlayerDisconnected(PlayerDisconnected e)
+        {
+            if (PlayerDisconnected != null) PlayerDisconnected(this, e);
         }
     }
 }

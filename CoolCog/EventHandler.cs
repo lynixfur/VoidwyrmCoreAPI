@@ -3,6 +3,7 @@ namespace CoolCog
     using System;
     using System.Threading.Tasks;
     using VoidwyrmCoreAPI.core.events.models;
+    using VoidwyrmCoreAPI.core.logger;
     using VoidwyrmLib;
 
     public class EventHandler
@@ -16,18 +17,23 @@ namespace CoolCog
 
         public async Task Subscribe()
         {
-            eventManager.PlayerJoined += OnPlayerJoined;
+            eventManager.PlayerConnected += OnPlayerConnected;
+            eventManager.PlayerDisconnected += OnPlayerDisconnected;
 
             await Task.CompletedTask;
-            TestTask();
         }
 
-        private void OnPlayerJoined(object source, PlayerJoin args)
+        private void OnPlayerConnected(object source, PlayerConnected args)
         {
-            Console.WriteLine("worked");
+            VoidLogger.Log(LogObject.LogType.Info, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, $"Event Fired! -> PlayerDisconnected (Data : {args.SomethingRandom})");
         }
 
-        private void TestTask()
+        private void OnPlayerDisconnected(object source, PlayerDisconnected args)
+        {
+            VoidLogger.Log(LogObject.LogType.Info, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, $"Event Fired! -> PlayerDisconnected (Data : {args.SomethingRandom})");
+        }
+
+        /*private void TestTask()
         {
             var x = new PlayerJoin
                     {
@@ -35,6 +41,6 @@ namespace CoolCog
                     };
 
             eventManager.OnPlayerJoined(x);
-        }
+        }*/
     }
 }

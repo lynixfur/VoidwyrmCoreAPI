@@ -49,7 +49,7 @@ namespace CoolCog
             _client = new DiscordSocketClient();
             _client.Log += Log;
             _client.MessageReceived += MessageHandler;
-            var token = "";
+            var token = "ODU5Nzg1ODIxNjI3ODc1MzM4.YNxv8Q.hiLkIzukPitYfooN4CZjGyRy48o";
             await _client.LoginAsync(TokenType.Bot, token);
             await _client.StartAsync();
 

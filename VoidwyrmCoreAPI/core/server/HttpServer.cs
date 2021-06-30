@@ -17,7 +17,6 @@ using static VoidwyrmCoreAPI.core.logger.LogObject;
 namespace Voidwyrm_Core.server
 {
     using VoidwyrmCoreAPI.core;
-    using VoidwyrmCoreAPI.core.Enums;
 
     class HttpServer
     {
@@ -97,16 +96,21 @@ namespace Voidwyrm_Core.server
                     {
                         switch (json.DataType)
                         {
-                            case EventTypes.CustomCommand:
-                            case EventTypes.CustomEvent:
-                            case EventTypes.CustomOverride:
+                            case "CustomCommand":
+                                break;
+                            case "CustomEvent":
+                                break;
+                            case "CustomOverride":
                                 eventRouter.RouteCustomEvent(json);
                                 break;
 
-                            case EventTypes.Configuration:
-                            case EventTypes.Event:
-                            case EventTypes.Override:
-                                eventRouter.RouteCoreEvent(json.DataProps);
+                            case "Configuration":
+                                break;
+                            case "Event":
+                                eventRouter.RouteCoreEvent(json);
+                                break;
+                            case "Override":
+                                //eventRouter.RouteCoreEvent(json.DataProps);
                                 break;
                             default:
                                 // Handle error here

@@ -3,7 +3,6 @@ using VoidwyrmCoreAPI.core.events.models;
 
 namespace VoidwyrmCoreAPI.core.events
 {
-    using global::VoidwyrmCoreAPI.core.Enums;
     using Newtonsoft.Json.Linq;
 
     public class EventRouter
@@ -33,13 +32,13 @@ namespace VoidwyrmCoreAPI.core.events
         {
             switch (data.DataType)
             {
-                case EventTypes.CustomCommand:
+                case "CustomCommand":
                     eventManager.OnCustomCommand(data);
                     break;
-                case EventTypes.CustomEvent:
+                case "CustomEvent":
                     eventManager.OnCustomEvent(data);
                     break;
-                case EventTypes.CustomOverride:
+                case "CustomOverride":
                     eventManager.OnCustomOverride(data);
                     break;
             }

@@ -30,19 +30,19 @@ namespace CoolCog
 
         private void OnPlayerConnected(object source, PlayerConnected args)
         {
-            VoidLogger.Log(LogObject.LogType.Info, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, $"Event Fired! -> PlayerConnected (Data : {args.SomethingRandom})");
+            VoidLogger.Log(LogObject.LogType.Info, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, $"Event Fired! -> PlayerConnected (Data : {args.SteamId})");
             var testChannel = discordSocketClient.GetChannel((ulong)859785136220405790) as IMessageChannel;
             PlayerConnectedAsync(testChannel, args).GetAwaiter().GetResult();
         }
 
         public async Task PlayerConnectedAsync(IMessageChannel channel, PlayerConnected args)
 	    {
-            await channel.SendMessageAsync($"The Player has connected! ```{args.DataObject}```");
+            await channel.SendMessageAsync($"The Player has connected! ```{args.SteamId}```");
         }
 
         private void OnPlayerDisconnected(object source, PlayerDisconnected args)
         {
-            VoidLogger.Log(LogObject.LogType.Info, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, $"Event Fired! -> PlayerDisconnected (Data : {args.SomethingRandom})");
+            VoidLogger.Log(LogObject.LogType.Info, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, $"Event Fired! -> PlayerDisconnected (Data : {args.SteamId})");
         }
 
         /*private void TestTask()

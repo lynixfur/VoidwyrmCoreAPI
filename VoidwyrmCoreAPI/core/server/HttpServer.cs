@@ -97,23 +97,17 @@ namespace Voidwyrm_Core.server
                         switch (json.DataType)
                         {
                             case "CustomCommand":
-                                break;
                             case "CustomEvent":
-                                break;
                             case "CustomOverride":
                                 eventRouter.RouteCustomEvent(json);
                                 break;
-
                             case "Configuration":
-                                break;
                             case "Event":
+                            case "Override":
                                 eventRouter.RouteCoreEvent(json);
                                 break;
-                            case "Override":
-                                //eventRouter.RouteCoreEvent(json.DataProps);
-                                break;
                             default:
-                                // Handle error here
+                                VoidLogger.Log(LogType.Error, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, "The DataType is invalid, please check the running events if they match the required type.");
                                 break;
                         }
                     }

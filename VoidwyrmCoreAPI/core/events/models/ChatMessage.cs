@@ -1,7 +1,5 @@
 ﻿namespace VoidwyrmCoreAPI.core.events.models
 {
-    using global::VoidwyrmCoreAPI.core.events.models.SourceEvents;
-
     public class ChatMessage : VoidwyrmEvent
     {
         public string Content { get; set; }

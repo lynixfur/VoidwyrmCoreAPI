@@ -1,11 +1,9 @@
-﻿namespace VoidwyrmCoreAPI.core.events.models.SourceEvents
+﻿namespace VoidwyrmCoreAPI.core.events.models
 {
-    using System;
-
-    public class VoidwyrmEvent : EventArgs
+    public class VoidwyrmEvent
     {
-        public string ServerId { get; set; }
         public string ClusterId { get; set; }
+        public string ServerId { get; set; }
         public string ServerName { get; set; }
     }
 }

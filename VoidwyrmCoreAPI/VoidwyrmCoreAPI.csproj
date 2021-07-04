@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
@@ -6,6 +6,19 @@
         <OutputPath>..\bin</OutputPath>
         <ApplicationIcon>assets\VoidwyrmApp.ico</ApplicationIcon>
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+        <UseWindowsForms>true</UseWindowsForms>
+        <PackageId>VoidwyrmLibAPI</PackageId>
+        <Authors>LynixZenial</Authors>
+        <Company>BloodyARK</Company>
+        <Product>VoidwyrmLibAPI</Product>
+        <Description>VoidwyrmLibAPI is used to create Voidwyrm Core API plugins with C# and .NET for ARK: Survival Evolved</Description>
+        <PackageLicenseFile>licence.txt</PackageLicenseFile>
+        <PackageProjectUrl>https://voidwyrmapi.com</PackageProjectUrl>
+        <PackageIcon>960px.png</PackageIcon>
+        <PackageIconUrl />
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
+        <FileVersion>2.1.0.0</FileVersion>
+        <Version>2.1.0</Version>
     </PropertyGroup>
 
     <ItemGroup>
@@ -13,6 +26,17 @@
       <PackageReference Include="McMaster.NETCore.Plugins" Version="1.4.0" />
       <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0-preview.5.21301.5" />
       <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="..\..\..\licence.txt">
+        <Pack>True</Pack>
+        <PackagePath></PackagePath>
+      </None>
+      <None Include="D:\Win11 Backup\Downloads\voidwyrm\960px.png">
+        <Pack>True</Pack>
+        <PackagePath></PackagePath>
+      </None>
     </ItemGroup>
 
 </Project>

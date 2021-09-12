@@ -5,12 +5,27 @@ using System.Text;
 using System.Net;
 using System.Threading.Tasks;
 using VoidwyrmCoreAPI.core.logger;
+using VoidwyrmCoreAPI.core.cogs;
+using VoidwyrmCoreAPI.core.interfaces;
+using VoidwyrmCoreAPI.core.events.models;
+using VoidwyrmCoreAPI.core.events;
+using System.IO;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using static VoidwyrmCoreAPI.core.logger.LogObject;
 
 namespace Voidwyrm_Core.server
 {
+    using VoidwyrmCoreAPI.core;
+
     class HttpServer
     {
+        private EventManager eventManager;
 
+        public HttpServer(EventManager eventManager)
+        {
+            this.eventManager = eventManager;
+        }
         public static HttpListener Listener;
         public static string Url = "http://localhost:4951/";
         public static string WelcomePageData =
@@ -66,17 +81,39 @@ namespace Voidwyrm_Core.server
                     //VoidLogger.Log(LogType.Warn, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, "This path is not implemented.");
                 }
 
-                if ((req.HttpMethod == "GET") && (req.Url.AbsolutePath.StartsWith("/api/events")))
+                if ((req.HttpMethod == "POST") && (req.Url.AbsolutePath.StartsWith("/api/events")))
                 {
-                    /*x.PlayerJoined.Invoke(this, new PlayerJoin
-                                                {
-                                                    Name = "Lynix",
-                                                    steamid = "349230823429384"
-                                                });*/
-                    VoidLogger.Log(LogObject.LogType.Debug, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, $"Event Triggered -> {req.Url.AbsolutePath.Replace("/api/events/","")}.");
-                    
-                    //VoidLogger.Log(LogType.Warn, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, "This path is not implemented (EVENTS).");
-                    //eventConsumer.Log(req.HttpMethod);
+                    EventRouter eventRouter = new EventRouter(eventManager);
+
+
+                    //Get Event Data from HTTP
+                    var eventData = new StreamReader(req.InputStream).ReadToEnd();
+
+                    CoreEvent json  = JsonConvert.DeserializeObject<CoreEvent>(eventData);
+
+                    //Determine if EventType is Custom and Route Event
+                    if (json != null)
+                    {
+                        switch (json.DataType)
+                        {
+                            case "CustomCommand":
+                            case "CustomEvent":
+                            case "CustomOverride":
+                                eventRouter.RouteCustomEvent(json);
+                                break;
+                            case "Configuration":
+                            case "Event":
+                            case "Override":
+                                eventRouter.RouteCoreEvent(json);
+                                break;
+                            default:
+                                VoidLogger.Log(LogType.Error, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, "The DataType is invalid, please check the running events if they match the required type.");
+                                break;
+                        }
+                    }
+
+                    VoidLogger.Log(LogType.Warn, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name, eventData);
+               
                 }
 
                 if ((req.HttpMethod == "GET") && (req.Url.AbsolutePath == "/api/ping"))

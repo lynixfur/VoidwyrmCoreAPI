@@ -3,7 +3,7 @@
 ![Voidwyrm](https://img.shields.io/badge/Core-v2.0-blue?style=for-the-badge)
 ![Voidwyrm](https://img.shields.io/badge/Voidwyrm-v2.0-blue?style=for-the-badge)
 ![Voidwyrm](https://img.shields.io/badge/Hooked%20Events-∞-cyan?style=for-the-badge)
-![Voidwyrm](https://img.shields.io/badge/Build-Pre%20Release-cyan?style=for-the-badge)
+![Voidwyrm](https://img.shields.io/badge/Build-Dead-red?style=for-the-badge)
 
 
 

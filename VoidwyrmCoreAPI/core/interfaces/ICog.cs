@@ -1,5 +1,7 @@
 ﻿namespace VoidwyrmCoreAPI.core.interfaces
 {
+    using global::VoidwyrmCoreAPI.core.events;
+
     public interface ICog
     {
         public string CogName { get; set; }
@@ -8,8 +10,10 @@
         public string CogPublishID { get; set; }
 
         void Configure();
-        void OnLoad();
+        void OnLoad(EventManager eventManager);
         void OnUnload();
-        void EventHandler();
+        void EventHandler(string dataProps);
+
+        void AdditionalConfigurations(string dataProps);
     }
 }

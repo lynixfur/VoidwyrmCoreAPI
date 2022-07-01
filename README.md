@@ -9,7 +9,7 @@
 
 Voidwyrm Core is a REST API handler for the mod Voidwyrm for ARK: Survival Evolved. It works simillar to ARK Server API but differs due to it not requiring executables to be run inside the Server iteself and can be hosted remotely. Voidwyrm Core Includes plugins and libraries which makes it easy to develop for, called Cogs! 
 
-This project uses C# as a base but can be expanded to many more prorgamming languages due to its structure and complexity.
+This project uses C# as a base but can be expanded to many more progamming languages due to its structure and complexity.
 
 # Cogs
 Cogs are plugins used by Voidwyrm API to Bind to Certain events in game and cast them to a new function within your Cog! Cogs are still experimental and should not be used on production servers! 
